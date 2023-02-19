@@ -1,108 +1,173 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <title>Mapa - trading</title>
-  </head>
-  <body>    
-   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">MAPA</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Projeto <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Sobre <span class="sr-only">(current)</span></a>
-      </li>
-      
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <title>Mapa - trading</title>
+</head>
 
-<!-- INICIO -->
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">MAPA</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Projeto <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Sobre <span class="sr-only">(current)</span></a>
+        </li>
+
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+
+  <!-- INICIO -->
 
 
 
 
 
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-      <div class="col-md-5 p-lg-5 mx-auto my-5">
-        <h1 class="display-5 font-weight-normal">MAPA -Trading</h1>
-        <p class="lead font-weight-normal">Fique por dentro da contações dos principais ativos financeiros do momento.</p>
-        <a class="btn btn-outline-secondary" href="#">Inscreva-se configure um bot de notificação</a>
+  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+      <h1 class="display-5 font-weight-normal">MAPA -Trading</h1>
+      <p class="lead font-weight-normal">Fique por dentro da contações dos principais ativos financeiros do momento.</p>
+      <a class="btn btn-outline-secondary" href="#">Inscreva-se configure um bot de notificação</a>
+    </div>
+    <div class="product-device shadow-sm d-none d-md-block"></div>
+    <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="ativos-container"></div>
+
+
+
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="text-center mb-5">Cotações BTC Hoje</h1>
+          <canvas id="myChart"></canvas>
+        </div>
       </div>
-      <div class="product-device shadow-sm d-none d-md-block"></div>
-      <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-
-
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="ativos-container"></div>
     </div>
 
-    
-    <footer class="container py-5">
-      <div class="row">
-        <div class="col-12 col-md">
-          <img src="https://raw.githubusercontent.com/mapa-trading/.github/main/profile/logo.png" alt="Image" height="42" width="250">
-          <small class="d-block mb-3 text-muted">&copy; 2023</small>
-        </div>
-        <div class="col-6 col-md">
-          <h5>Bot de Notificações</h5>
-          <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="#">Notificação por email</a></li>
-            <li><a class="text-muted" href="#">Notificação por sms</a></li>
-            <li><a class="text-muted" href="#">Notificação pelo WhatsApp</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-md">
-          <h5>Dicas</h5>
-          <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="#">Saiba a melhor hora de comprar</a></li>
-            <li><a class="text-muted" href="#">Lista de Ações Brasileiras</a></li>
-            <li><a class="text-muted" href="#">Cambio de moedas</a></li>
-            <li><a class="text-muted" href="#">Cambio de criptomoedas</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-md">
-          <h5>Sobre</h5>
-          <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="http://mapa-trading.herokuapp.com/swagger-ui/index.htm">Documentação da API</a></li>
-            <li><a class="text-muted" href="https://github.com/mapa-trading">Projeto</a></li>
-            <li><a class="text-muted" href="https://github.com/mapa-trading/mapa-cotacoes/blob/main/LICENSE">Licença do projeto</a></li>
-            <li><a class="text-muted" href="https://github.com/mapa-trading/.github/blob/main/profile/README.MD">Sobre nós</a></li>
-          </ul>
-        </div>
-        
+  </div>
+
+
+  <footer class="container py-5">
+    <div class="row">
+      <div class="col-12 col-md">
+        <img src="https://raw.githubusercontent.com/mapa-trading/.github/main/profile/logo.png" alt="Image" height="42"
+          width="250">
+        <small class="d-block mb-3 text-muted">&copy; 2023</small>
       </div>
-    </footer>
+      <div class="col-6 col-md">
+        <h5>Bot de Notificações</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Notificação por email</a></li>
+          <li><a class="text-muted" href="#">Notificação por sms</a></li>
+          <li><a class="text-muted" href="#">Notificação pelo WhatsApp</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Dicas</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Saiba a melhor hora de comprar</a></li>
+          <li><a class="text-muted" href="#">Lista de Ações Brasileiras</a></li>
+          <li><a class="text-muted" href="#">Cambio de moedas</a></li>
+          <li><a class="text-muted" href="#">Cambio de criptomoedas</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Sobre</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="http://mapa-trading.herokuapp.com/swagger-ui/index.htm">Documentação da
+              API</a></li>
+          <li><a class="text-muted" href="https://github.com/mapa-trading">Projeto</a></li>
+          <li><a class="text-muted" href="https://github.com/mapa-trading/mapa-cotacoes/blob/main/LICENSE">Licença do
+              projeto</a></li>
+          <li><a class="text-muted" href="https://github.com/mapa-trading/.github/blob/main/profile/README.MD">Sobre
+              nós</a></li>
+        </ul>
+      </div>
 
-
-    
-
+    </div>
+  </footer>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+
   <script>
+
+    let today = new Date();
+    let todayIsoString = today.toISOString().substring(0, 10);
+
+    let apiUrl = `http://mapa-trading.herokuapp.com/cotacoes?endDate=${todayIsoString}&siglas=BTC&siglas=&startDate=${todayIsoString}`;
+
+    let myChart;
+
+
+
+    let createChart = (url, ctx, ativo) => {
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          const chartData = {
+            labels: data.map(item => new Date(item.dataHora).getHours() + ":00"),
+            datasets: [{
+              label: 'Preço do ' + ativo + ' em (BRL)',
+              data: data.map(item => item.valor),
+              borderColor: 'rgb(75, 192, 192)',
+              tension: 0.0,
+            }]
+          };
+
+
+          if (myChart) {
+            myChart.destroy();
+          }
+
+          myChart = new Chart(ctx, {
+            type: 'line',
+            data: chartData,
+            options: {
+              scales: {
+                y: {
+                  stacked: true
+                }
+              }
+            }
+          });
+        })
+        .catch(error => console.error(error));
+    };
+
+    createChart(apiUrl, document.getElementById('myChart').getContext('2d'), 'BTC');
+
+
+
     $(document).ready(function () {
       $.getJSON("https://mapa-trading.herokuapp.com/ativos-financeiros/tipos/CRYPTO", function (data) {
-
         $.each(data, function (i, ativo) {
           var $card = $("<div>").addClass("col");
           var $cardBody = $("<div>").addClass("card-body");
@@ -113,10 +178,24 @@
           $cardBody.append($titulo);
           $card.append($cardBody);
 
+          $card.click(function () {
+            apiUrl = `http://mapa-trading.herokuapp.com/cotacoes?endDate=${todayIsoString}&siglas=${ativo.sigla}&siglas=&startDate=${todayIsoString}`;
+
+            createChart(apiUrl, document.getElementById('myChart').getContext('2d'), ativo.sigla);
+            myChart.update();
+
+            document.querySelector('#myChart').parentElement.querySelector('h1').textContent = 'Cotações ' + ativo.sigla + ' Hoje';
+
+          });
+
+
           $("#ativos-container").append($card);
         });
       });
     });
 
+
+
   </script>
+
 </html>
