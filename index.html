@@ -122,7 +122,7 @@
     let today = new Date();
     let todayIsoString = today.toISOString().substring(0, 10);
 
-    let apiUrl = `http://mapa-trading.herokuapp.com/cotacoes?endDate=${todayIsoString}&siglas=BTC&siglas=&startDate=${todayIsoString}`;
+    let apiUrl = `https://mapa-trading.herokuapp.com/cotacoes?endDate=${todayIsoString}&siglas=BTC&siglas=&startDate=${todayIsoString}`;
 
     let myChart;
 
@@ -179,7 +179,7 @@
           $card.append($cardBody);
 
           $card.click(function () {
-            apiUrl = `http://mapa-trading.herokuapp.com/cotacoes?endDate=${todayIsoString}&siglas=${ativo.sigla}&siglas=&startDate=${todayIsoString}`;
+            apiUrl = `https://mapa-trading.herokuapp.com/cotacoes?endDate=${todayIsoString}&siglas=${ativo.sigla}&siglas=&startDate=${todayIsoString}`;
 
             createChart(apiUrl, document.getElementById('myChart').getContext('2d'), ativo.sigla);
             myChart.update();
