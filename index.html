@@ -119,7 +119,10 @@
 
   <script>
 
-    let today = new Date();
+    const moment = require('moment-timezone');
+
+    const today = moment().tz('America/Sao_Paulo').toDate();
+    
     let todayIsoString = today.toISOString().substring(0, 10);
 
     let apiUrl = `https://mapa-trading.herokuapp.com/cotacoes?endDate=${todayIsoString}&siglas=BTC&siglas=&startDate=${todayIsoString}`;
