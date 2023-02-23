@@ -12,6 +12,11 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <title>Mapa - trading</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <!-- inclui a biblioteca moment-timezone.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.32/moment-timezone-with-data.min.js"></script>
+
 </head>
 
 <body>
@@ -118,8 +123,6 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
 
   <script>
-
-    const moment = require('moment-timezone');
 
     const today = moment().tz('America/Sao_Paulo').toDate();
     
