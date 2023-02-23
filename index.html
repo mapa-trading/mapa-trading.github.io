@@ -14,7 +14,6 @@
   <title>Mapa - trading</title>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
-  <!-- inclui a biblioteca moment-timezone.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.32/moment-timezone-with-data.min.js"></script>
 
 </head>
@@ -124,9 +123,10 @@
 
   <script>
 
-    const today = moment().tz('America/Sao_Paulo').toDate();
-    
-    let todayIsoString = today.toISOString().substring(0, 10);
+
+    const todayIsoString = moment().tz('America/Sao_Paulo').format('YYYY-MM-DD');
+
+    //let todayIsoString = today.format('YYYY-MM-DD');
 
     let apiUrl = `https://mapa-trading.herokuapp.com/cotacoes?endDate=${todayIsoString}&siglas=BTC&siglas=&startDate=${todayIsoString}`;
 
